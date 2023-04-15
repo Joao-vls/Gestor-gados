@@ -1,3 +1,28 @@
-#index:
-#    path: /
-#    controller: App\Controller\DefaultController::index
+index:
+   path: /gado
+   controller: App\Controller\GadoController::index
+
+id-return:
+    path: /id-return/{id}
+    controller: App\Controller\GadoController::BuscaId
+
+id-delete:
+    path: /id-delete/{id}
+    controller: App\Controller\GadoController::DeletarGado
+
+id-atualize:
+  path: /id-atualize/{id}
+  controller: App\Controller\GadoController::EditarGado
+  methods: PATCH
+
+qt-abate:
+    path: /
+    controller: App\Controller\FilaAbateController::Filacount
+
+id-cabate:
+    path: /id-cabate/{id}
+    controller: App\Controller\GadoController::MandarFilaAbate
+
+id-abate:
+    path: /id-abate
+    controller: App\Controller\FilaAbateController::AddFila

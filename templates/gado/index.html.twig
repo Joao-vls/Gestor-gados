@@ -1,0 +1,65 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+<div class="frconten">
+    <div class="row justify-content-center">
+        <div class="col-md-6">
+        <button type="button" class="remover_cad " >X</button>
+
+    {{ form_start(form) }}
+    {{ form_row(form.id) }}
+
+    {{ form_row(form.leite) }}
+    {{ form_row(form.racao) }}
+    {{ form_row(form.peso) }}
+    {{ form_row(form.nascimento) }}
+    <button type="submit" class="btn btn-primary">Cadastrar</button>
+
+    {{ form_end(form) }}
+</div>
+</div>
+</div>
+<main class="grid-container">
+  <div class="gado-info">
+    <p>Leite total produzido: <span style="color:green">{{ leite_s }}L</spam></p>
+    <p>Ração total gasta: <span style="color:green">{{ racao_s }}Kg</spam></p>
+    <p>Peso total dos gados: <span style="color:green">{{ peso_s }}Kg</spam></p>
+    <p>Total de Gados que tenham até 1 ano de idade e que consumam mais
+            de 500Kg de ração por semana : <span style="color:green">{{ gc_s }}</spam></p>
+    <p>Animais abatidos: <span style="color:green">{{ gado_abate }}</spam></p>
+    </div>
+    {% if melhor_escolha is defined or escolha is defined %}
+    <div class="gado-info">
+      {% if melhor_escolha %}
+      <h2>Melhores gados para abate</h2>
+
+      <ul>
+        {% for es in melhor_escolha %}
+        <li>Id : {{ es.id }} Peso: <span style="color:blue">{{es.peso}}Kg</span> Leite produzido : <span style="color:blue">{{es.leite}}L</span> Ração gasta: <span style="color:blue">{{es.peso}}kg</span></li>
+
+        {% endfor %}
+      </ul>
+      {% endif %}
+      {% if escolha %}
+      <h2>Gados que podem ser abatidos</h2>
+      <ul>
+        {% for es in escolha %}
+          <li>Id : {{ es.id }} Peso: <span style="color:blue">{{es.peso}}Kg</span> Leite produzido : <span style="color:blue">{{es.leite}}L</span> Ração gasta: <span style="color:blue">{{es.peso}}Kg</span></li>
+        {% endfor %}
+      </ul>
+      {% endif %}
+    </div>
+    {% endif %}
+    {% if gados is defined %}
+    <div class="gado-info">
+    <h2>Gados vivos: </h2>
+    {% for es in gados %}
+    <p>Id : {{ es.id }} Peso: <span style="color:blue">{{es.peso}}Kg</span> Leite produzido : <span style="color:blue">{{es.leite}}L</span> Ração gasta: <span style="color:blue">{{es.peso}}kg</span></p>
+    {% endfor %}
+    </div>
+    {% endif %}
+
+</main>
+
+
+{% endblock %}
