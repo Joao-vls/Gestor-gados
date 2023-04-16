@@ -35,7 +35,7 @@
 
       <ul>
         {% for es in melhor_escolha %}
-        <li>Id : {{ es.id }} Peso: <span style="color:blue">{{es.peso}}Kg</span> Leite produzido : <span style="color:blue">{{es.leite}}L</span> Ração gasta: <span style="color:blue">{{es.peso}}kg</span></li>
+        <li>Id : {{ es.id }} Peso: <span style="color:blue">{{es.peso}}Kg</span> Leite produzido : <span style="color:blue">{{es.leite}}L</span> Ração gasta: <span style="color:blue">{{es.racao}}kg</span></li>
 
         {% endfor %}
       </ul>
@@ -44,7 +44,7 @@
       <h2>Gados que podem ser abatidos</h2>
       <ul>
         {% for es in escolha %}
-          <li>Id : {{ es.id }} Peso: <span style="color:blue">{{es.peso}}Kg</span> Leite produzido : <span style="color:blue">{{es.leite}}L</span> Ração gasta: <span style="color:blue">{{es.peso}}Kg</span></li>
+          <li>Id : {{ es.id }} Peso: <span style="color:blue">{{es.peso}}Kg</span> Leite produzido : <span style="color:blue">{{es.leite}}L</span> Ração gasta: <span style="color:blue">{{es.racao}}Kg</span></li>
         {% endfor %}
       </ul>
       {% endif %}
@@ -54,7 +54,7 @@
     <div class="gado-info">
     <h2>Gados vivos: </h2>
     {% for es in gados %}
-    <p>Id : {{ es.id }} Peso: <span style="color:blue">{{es.peso}}Kg</span> Leite produzido : <span style="color:blue">{{es.leite}}L</span> Ração gasta: <span style="color:blue">{{es.peso}}kg</span></p>
+    <p>Id : {{ es.id }} Peso: <span style="color:blue">{{es.peso}}Kg</span> Leite produzido : <span style="color:blue">{{es.leite}}L</span> Ração gasta: <span style="color:blue">{{es.racao}}kg</span></p>
     {% endfor %}
     </div>
     {% endif %}
